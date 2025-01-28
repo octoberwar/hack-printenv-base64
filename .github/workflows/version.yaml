@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      pr_options:
+        type: string
+        default: ''
+        description: additional options for gh pr create, such as for asking for specific reviewers
+
+# disable all permissions -- we use the PAT's permissions instead
+permissions: {}
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - run: |
+          echo ${{ inputs.pr_options }}
+
