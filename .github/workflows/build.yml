@@ -13,6 +13,7 @@ jobs:
     env:
       CI: "true"
       SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
